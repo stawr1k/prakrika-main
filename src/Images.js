@@ -1,93 +1,53 @@
 import Logo from "./assets/Header/nav_logo.svg"
-import Phone from "./assets/Header/phone.svg"
-import ArrowToLeft from "./assets/Page1/Section1/arrow_to_left.svg"
-import ArrowToRight from "./assets/Page1/Section1/arrow_to_right.svg"
-import Stone from "./assets/Page1/Section3/stone.svg"
-import Camera from "./assets/Page1/Section3/camera.svg"
-import Tree from "./assets/Page1/Section3/tree.svg"
-import Place1 from "./assets/Page1/Section4/Place1.png"
-import Place2 from "./assets/Page1/Section4/Place2.png"
-import Place3 from "./assets/Page1/Section4/Place3.png"
-import Place4 from "./assets/Page1/Section4/Place4.png"
-import Place5 from "./assets/Page1/Section4/Place5.png"
-import Place6 from "./assets/Page1/Section4/Place6.png"
-import Minus from "./assets/Page1/Section8/minus90.svg"
-import Plus from "./assets/Page1/Section8/plus.svg"
-import DownloadImage from "./assets/Page1/Section9/download.svg"
-import DeleteImage from "./assets/Page1/Section9/delete.svg"
 import LogoFooter from "./assets/Footer/logo.svg"
-import FacebookLogo from "./assets/Footer/facebook.svg"
-import VKLogo from "./assets/Footer/vk.svg"
-import InstagramLogo from "./assets/Footer/inst.svg"
-import Image1 from "./assets/Page3/Section2/image1.png"
-import Image2 from "./assets/Page3/Section2/image2.png"
-import Certificate from "./assets/Page3/Section6/certif.png"
-import ArrowDiagonal from "./assets/Page3/Section6/arrow_diagonal.svg"
-import DefPlace1 from "./assets/Page2/Page2Default/Section2/place1.png"
-import DefPlace2 from "./assets/Page2/Page2Default/Section2/place2.png"
-import DefPlace3 from "./assets/Page2/Page2Default/Section2/place3.png"
-import DefPlace4 from "./assets/Page2/Page2Default/Section2/place4.png"
-import DefPlace5 from "./assets/Page2/Page2Default/Section2/place5.png"
-import DefPlace6 from "./assets/Page2/Page2Default/Section2/place6.png"
-import OpePlace1 from "./assets/Page2/Page2Opened/Section2/place1.png"
-import OpePlace2 from "./assets/Page2/Page2Opened/Section2/place2.png"
-import OpePlace3 from "./assets/Page2/Page2Opened/Section2/place3.png"
-import OpePlace4 from "./assets/Page2/Page2Opened/Section2/place4.png"
-import OpePlace5 from "./assets/Page2/Page2Opened/Section2/place5.png"
-import OpePlace6 from "./assets/Page2/Page2Opened/Section2/place6.png"
-import OpePlace7 from "./assets/Page2/Page2Opened/Section2/place7.png"
-import OpePlace8 from "./assets/Page2/Page2Opened/Section2/place8.png"
-import OpePlace9 from "./assets/Page2/Page2Opened/Section2/place9.png"
-import OpePlace10 from "./assets/Page2/Page2Opened/Section2/place10.png"
-import BackgroundImage1 from "./assets/Page1/Section1/bg.png"
-import BackgroundImage2 from "./assets/Page1/Section1/bg2.png"
-import BackgroundImage3 from "./assets/Page1/Section1/bg3.png"
-import BackgroundImage4 from "./assets/Page1/Section1/bg4.png"
+import ArrowToLeft from "./assets/Page1/Section1/arrow_left.svg"
+import ArrowToRight from "./assets/Page1/Section1/arrow_right.svg"
+
+// 100% Exact 1-to-1 Figma Assets extracted directly from Node 16:115 & Node 22:219
+import HeroPerson from "./assets/figma_assets/hero_person.png"
+import ProductSenior from "./assets/figma_assets/prod_comfort.png"
+import ProductCar from "./assets/figma_assets/prod_car.png"
+import ProductWashingMachine from "./assets/figma_assets/prod_washer.png"
+import ProductYoungSpecialist from "./assets/figma_assets/prod_active.png"
+import ReviewPerson1 from "./assets/figma_assets/review_1.png"
+import ReviewPerson2 from "./assets/figma_assets/review_2.png"
+import ReviewPerson3 from "./assets/figma_assets/review_3.png"
+
+// Page 2 Specific Assets
+import HeroPage2Man from "./assets/figma_assets/hero_page2_man.png"
+import SmartInvestMan from "./assets/figma_assets/smart_invest_man.png"
+import ModelInvestor from "./assets/figma_assets/model_investor.png"
+import ModelBuilder from "./assets/figma_assets/model_builder.png"
+import ConsultSpecialist from "./assets/figma_assets/consult_specialist_banner.png"
+import ApplicantMan from "./assets/figma_assets/applicant_man.png"
 
 export const Photo = {
-    Logo:Logo,
-    Phone:Phone,
-    ArrowToLeft:ArrowToLeft,
-    ArrowToRight:ArrowToRight,
-    Stone:Stone,
-    Camera:Camera,
-    Tree:Tree,
-    Place1:Place1,
-    Place2:Place2,
-    Place3:Place3,
-    Place4:Place4,
-    Place5:Place5,
-    Place6:Place6,
-    Minus:Minus,
-    Plus:Plus,
-    DownloadImage:DownloadImage,
-    DeleteImage:DeleteImage,
-    LogoFooter:LogoFooter,
-    FacebookLogo:FacebookLogo,
-    VKLogo:VKLogo,
-    InstagramLogo:InstagramLogo,
-    Image1:Image1,
-    Image2:Image2,
-    Certificate:Certificate,
-    ArrowDiagonal:ArrowDiagonal,
-    DefPlace1:DefPlace1,
-    DefPlace2:DefPlace2,
-    DefPlace3:DefPlace3,
-    DefPlace4:DefPlace4,
-    DefPlace5:DefPlace5,
-    DefPlace6:DefPlace6,
-    OpePlace1:OpePlace1,
-    OpePlace2:OpePlace2,
-    OpePlace3:OpePlace3,
-    OpePlace4:OpePlace4,
-    OpePlace5:OpePlace5,
-    OpePlace6:OpePlace6,
-    OpePlace7:OpePlace7,
-    OpePlace8:OpePlace8,
-    OpePlace9:OpePlace9,
-    OpePlace10:OpePlace10,
-    BackgroundImage1:BackgroundImage1,
-    BackgroundImage2:BackgroundImage2,
-    BackgroundImage3:BackgroundImage3,
-    BackgroundImage4:BackgroundImage4,
+  Logo,
+  LogoFooter,
+  ArrowToLeft,
+  ArrowToRight,
+  
+  // Hero (Celebrating man in beige blazer with fists)
+  HeroPerson,
+  HeroSlide2: HeroPerson,
+  HeroSlide3: HeroPerson,
+
+  // Products
+  ProductSenior,
+  ProductCar,
+  ProductWashingMachine,
+  ProductYoungSpecialist,
+
+  // Reviews
+  ReviewPerson1,
+  ReviewPerson2,
+  ReviewPerson3,
+
+  // Page 2
+  HeroPage2Man,
+  SmartInvestMan,
+  ModelInvestor,
+  ModelBuilder,
+  ConsultSpecialist,
+  ApplicantMan
 }

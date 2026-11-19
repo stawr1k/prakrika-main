@@ -1,182 +1,332 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+.opportunities-section {
+  padding: 40px 0 60px;
+  background-color: #FFFFFF;
 
+  .section-title {
+    font-size: 2.125rem;
+    font-weight: 700;
+    color: #0F172A;
+    letter-spacing: -0.5px;
+    margin-bottom: 40px;
+  }
 
-html{
-    scroll-behavior: smooth;
-    font-size: 16px;
-    overflow-x: hidden;
-    background-color: #0A090D;
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-button{
-    border-style: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: transparent;
-}
-li, a{
-    text-decoration: none;
-    list-style: none;
-    transition: all 0.3s ease;
-}
-input{
-    outline: none;
-    border-style: none;
-    background-color: transparent;
-}
-img{
-    display: block;
-    max-width: 100%;
-}
-body{
-    display: flex;
-    flex-direction: column;
-    gap: 150px;
-}
+  .opportunities-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 60px;
+    align-items: flex-start;
 
+    /* Column 1: Left Benefits */
+    .opp-col-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-
-.s5-section{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &_inside{
-        margin-inline: 20px;
-        max-width: 1200px;
-        width: 100%;
+      .benefits-list {
         display: flex;
         flex-direction: column;
-        gap: 60px;
-        h1{
-            line-height: 1.2;
-            font-size: 2.25rem;
-            color: #F2F2F2;
-            font-family: "Manrope", sans-serif;
-            font-style: normal;
-            font-weight: bold;
-        }
-        &_bottom{
+        gap: 22px;
+        margin-bottom: 32px;
+
+        .benefit-row {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          .benefit-icon-wrap {
+            width: 44px;
+            height: 44px;
             display: flex;
-            &_left{
-                background-image: url(../../../assets/Page1/Section5/line.svg);
-                background-repeat: no-repeat;
-                border-right: 1px solid #3B3A3D;
-                max-width: 500px;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: 80px;
-                user-select: none;
-                button{
-                    width: fit-content;
-                    height: 65px;
-                    display: flex;
-                    align-items: center;
-                    gap: 20px;
-                    &:hover{
-                        p{
-                            transform: translateX(10px);
-                        }
-                    }
-                    div{
-                        background-color: #0A090D;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 54px;
-                        height: 54px;
-                        border-radius: 100px;
-                        border: 1px solid #848486;
-                        transition: all ease 0.3s;
-                        h3{
-                            color: #848486;
-                            line-height: 1.4;
-                            font-size: 1.5rem;
-                            font-family: "Manrope", sans-serif;
-                            font-style: normal;
-                            font-weight: normal;
-                        transition: all ease 0.3s;
-                        }
-                    }
-                    p{
-                        color: #848486;
-                        line-height: 1.4;
-                        font-size: 1.5rem;
-                        font-family: "Manrope", sans-serif;
-                        font-style: normal;
-                        font-weight: normal;
-                        transition: all ease 0.3s;
-                    }
-                    &.is-marked{
-                        gap: 0px;
-                        div{
-                            border: 1px solid #DFD1A7;
-                            h3{
-                                color: #DFD1A7;
-                            }
-                        }
-                        p{
-                            margin-left: 36px;
-                            transform: scale(1.1);
-                            color: #DFD1A7;
-                        }
-                    }
-                }
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+
+            svg {
+              width: 100%;
+              height: 100%;
             }
-            &_right{
-                margin-inline: auto;
-                max-width: 500px;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                &_text{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 30px;
-                    h2{
-                        line-height: 1.4;
-                        color: #E5E5E5;
-                        font-size: 1.5rem;
-                        font-family: "Manrope", sans-serif;
-                        font-style: normal;
-                        font-weight: normal;
-                    }
-                    p{
-                        color: #E5E5E5;
-                        font-size: 1.125rem;
-                        font-weight: normal;
-                        line-height: 1.6;
-                    }
-                }
-                &_arrows{
-                    user-select: none;
-                    display: flex;
-                    gap: 45px;
-                    padding-left: 10px;
-                    button{
-                        width: 90px;
-                        height: 40px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    #nav-right-arrow:hover{
-                        transform: translateX(6px);
-                    }
-                    #nav-left-arrow:hover{
-                        transform: translateX(-6px);
-                    }
-                }
-            }
+          }
+
+          .benefit-text {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: #0F172A;
+            line-height: 1.35;
+          }
         }
-    }   
+      }
+
+      .btn-opp-cta {
+        padding: 13px 26px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        width: fit-content;
+      }
+    }
+
+    /* Column 2 & 3: Visual charts (clean layout, no cards) */
+    .opp-col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+
+      .charts-top-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: flex-start;
+
+        .chart-header {
+          font-size: 0.875rem;
+          font-weight: 600;
+          color: #0F172A;
+          margin-bottom: 24px;
+          min-height: 22px;
+        }
+
+        /* Bar comparison */
+        .bar-chart-block {
+          .bars-wrap {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            min-height: 190px;
+            padding-top: 24px;
+            padding-bottom: 12px;
+
+            .bar-item {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 80px;
+
+              .bar-top {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 8px;
+
+                .b-val {
+                  font-size: 1.125rem;
+                  font-weight: 700;
+                  color: #0F172A;
+                  line-height: 1.1;
+
+                  &.val-blue {
+                    font-size: 1.375rem;
+                    font-weight: 800;
+                    color: #002EF5;
+                  }
+                }
+
+                .b-sub {
+                  font-size: 0.6875rem;
+                  font-weight: 500;
+                  color: #94A3B8;
+
+                  &.sub-blue {
+                    color: #002EF5;
+                    font-weight: 600;
+                  }
+                }
+              }
+
+              .bar-pill {
+                width: 72px;
+                border-radius: 6px;
+
+                &.bar-gray {
+                  background-color: #CBD5E1;
+                }
+
+                &.bar-blue {
+                  background-color: #002EF5;
+                }
+              }
+
+              .bar-caption {
+                font-size: 0.6875rem;
+                font-weight: 700;
+                color: #0F172A;
+                text-align: center;
+                line-height: 1.25;
+                margin-top: 10px;
+
+                &.cap-blue {
+                  color: #002EF5;
+                }
+              }
+            }
+          }
+        }
+
+        /* Stability chart */
+        .stability-chart-block {
+          .stability-chart-svg-wrap {
+            padding-top: 24px;
+
+            .stability-svg {
+              width: 100%;
+              height: 140px;
+              overflow: visible;
+            }
+
+            .chart-legend {
+              display: flex;
+              gap: 24px;
+              margin-top: 18px;
+
+              .legend-entry {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 0.75rem;
+                color: #64748B;
+
+                .dot {
+                  width: 8px;
+                  height: 8px;
+                  border-radius: 50%;
+
+                  &.dot-gray {
+                    background-color: #94A3B8;
+                  }
+
+                  &.dot-blue {
+                    background-color: #002EF5;
+                  }
+                }
+
+                .legend-bold {
+                  font-weight: 700;
+                  color: #0F172A;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      /* Liquidity section */
+      .liquidity-section-wrap {
+        border-top: 1px solid #F1F5F9;
+        padding-top: 24px;
+
+        .liquidity-main-title {
+          font-size: 0.8125rem;
+          font-weight: 600;
+          color: #0F172A;
+          margin-bottom: 14px;
+        }
+
+        .liquidity-cards-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+
+          .liquidity-box {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            .l-top {
+              display: flex;
+              align-items: baseline;
+              gap: 8px;
+
+              .l-title {
+                font-size: 0.8125rem;
+                font-weight: 700;
+                color: #0F172A;
+              }
+
+              .l-badge {
+                font-size: 0.6875rem;
+                font-weight: 500;
+
+                &.badge-gray {
+                  color: #64748B;
+                }
+
+                &.badge-blue {
+                  color: #002EF5;
+                  font-weight: 600;
+                }
+              }
+            }
+
+            .l-term-row {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 0.75rem;
+              color: #64748B;
+              font-weight: 500;
+
+              .check-svg {
+                flex-shrink: 0;
+
+                &.gray-check {
+                  color: #94A3B8;
+                }
+
+                &.blue-check {
+                  color: #002EF5;
+                }
+              }
+
+              &.term-blue {
+                color: #002EF5;
+                font-weight: 600;
+              }
+            }
+
+            .l-track {
+              width: 100%;
+              height: 8px;
+              background-color: #F1F5F9;
+              border-radius: 4px;
+              overflow: hidden;
+              margin-top: 2px;
+
+              .l-fill {
+                height: 100%;
+                border-radius: 4px;
+
+                &.fill-gray {
+                  background-color: #CBD5E1;
+                }
+
+                &.fill-blue {
+                  background-color: #002EF5;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .opportunities-section {
+    .opportunities-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+
+      .opp-col-right {
+        .charts-top-row {
+          grid-template-columns: 1fr;
+        }
+
+        .liquidity-section-wrap {
+          .liquidity-cards-row {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+        }
+      }
+    }
+  }
 }

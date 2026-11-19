@@ -1,0 +1,236 @@
+.opportunities-section {
+  padding: 40px 0 50px;
+  background-color: #FFFFFF;
+}
+.opportunities-section .section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+  margin-bottom: 32px;
+}
+.opportunities-section .opportunities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.opportunities-section .opportunities-grid .opp-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.opportunities-section .opportunities-grid .opp-left-col .benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.opportunities-section .opportunities-grid .opp-left-col .benefits-list .benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  padding: 18px 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+  transition: transform 0.2s ease;
+}
+.opportunities-section .opportunities-grid .opp-left-col .benefits-list .benefit-item:hover {
+  transform: translateX(3px);
+  border-color: rgba(27, 89, 248, 0.25);
+}
+.opportunities-section .opportunities-grid .opp-left-col .benefits-list .benefit-item .benefit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.opportunities-section .opportunities-grid .opp-left-col .benefits-list .benefit-item .benefit-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+.opportunities-section .opportunities-grid .opp-left-col .btn-opp-cta {
+  padding: 13px;
+  font-size: 0.9375rem;
+}
+.opportunities-section .opportunities-grid .chart-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+  padding: 24px;
+  box-sizing: border-box;
+}
+.opportunities-section .opportunities-grid .chart-card .chart-card-title {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.35;
+  margin-bottom: 20px;
+}
+.opportunities-section .opportunities-grid .opp-mid-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 160px;
+  padding-top: 10px;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison .bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 76px;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison .bar-group .bar-val {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison .bar-group .bar-val.highlight-val {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison .bar-group .bar-track {
+  width: 40px;
+  height: 100px;
+  background-color: #F1F5F9;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: flex-end;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison .bar-group .bar-track .bar-fill {
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison .bar-group .bar-track .bar-fill.bar-gray {
+  background-color: #CBD5E1;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison .bar-group .bar-track .bar-fill.bar-blue {
+  background: linear-gradient(180deg, #1B59F8 0%, #3B82F6 100%);
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison .bar-group .bar-name {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.2;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .bars-comparison .bar-group.is-featured .bar-name {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item {
+  margin-bottom: 14px;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item:last-child {
+  margin-bottom: 0;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .liquidity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .liquidity-header .l-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .liquidity-header .l-tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .liquidity-header .l-tag.tag-gray {
+  background-color: #F1F5F9;
+  color: var(--text-muted);
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .liquidity-header .l-tag.tag-blue {
+  background-color: var(--primary-light);
+  color: var(--primary-color);
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .progress-bar {
+  height: 6px;
+  background-color: #F1F5F9;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .progress-bar .progress-fill {
+  height: 100%;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .progress-bar .progress-fill.fill-gray {
+  background-color: #94A3B8;
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .progress-bar .progress-fill.fill-blue {
+  background-color: var(--primary-color);
+}
+.opportunities-section .opportunities-grid .opp-mid-col .liquidity-card .liquidity-item .l-term {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.opportunities-section .opportunities-grid .opp-right-col .stability-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.opportunities-section .opportunities-grid .opp-right-col .stability-card .stability-chart-svg {
+  width: 100%;
+}
+.opportunities-section .opportunities-grid .opp-right-col .stability-card .stability-chart-svg .chart-svg-elem {
+  width: 100%;
+  height: auto;
+}
+.opportunities-section .opportunities-grid .opp-right-col .stability-card .stability-chart-svg .chart-legend {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 14px;
+}
+.opportunities-section .opportunities-grid .opp-right-col .stability-card .stability-chart-svg .chart-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.opportunities-section .opportunities-grid .opp-right-col .stability-card .stability-chart-svg .chart-legend .legend-item .legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.opportunities-section .opportunities-grid .opp-right-col .stability-card .stability-chart-svg .chart-legend .legend-item .legend-dot.dot-gray {
+  background-color: #94A3B8;
+}
+.opportunities-section .opportunities-grid .opp-right-col .stability-card .stability-chart-svg .chart-legend .legend-item .legend-dot.dot-blue {
+  background-color: var(--primary-color);
+}
+.opportunities-section .opportunities-grid .opp-right-col .stability-card .stability-chart-svg .chart-legend .legend-item .font-bold {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+@media (max-width: 1080px) {
+  .opportunities-section .opportunities-grid {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=Section5.css.map */

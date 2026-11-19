@@ -1,0 +1,189 @@
+.page2-products-section {
+  padding: 60px 0;
+
+  .products-section-header {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    align-items: flex-start;
+
+    .header-left {
+      .products-title {
+        font-size: 32px;
+        font-weight: 800;
+        color: #0F172A;
+        letter-spacing: -0.5px;
+        margin-bottom: 14px;
+      }
+
+      .products-lead {
+        font-size: 15px;
+        color: #64748B;
+        line-height: 1.55;
+      }
+    }
+
+    .header-right {
+      .mudaraba-text {
+        font-size: 13px;
+        line-height: 1.6;
+        color: #64748B;
+        background-color: #F8FAFC;
+        padding: 20px 24px;
+        border-radius: 16px;
+        border-left: 3px solid #002EF5;
+      }
+    }
+  }
+
+  .products-3cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    .p2-product-card {
+      background-color: #F0F4F8;
+      border-radius: 20px;
+      overflow: visible;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+      }
+
+      .p2-card-image-wrap {
+        height: 230px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+        .p2-card-img {
+          height: 100%;
+          width: auto;
+          object-fit: contain;
+          object-position: bottom center;
+        }
+      }
+
+      .p2-card-body {
+        padding: 24px 28px 28px 28px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-between;
+
+        .p2-card-cat {
+          font-size: 13px;
+          font-weight: 500;
+          color: #7B92B2;
+          margin-bottom: 6px;
+        }
+
+        .p2-card-title {
+          font-size: 22px;
+          font-weight: 700;
+          color: #0F172A;
+          margin-bottom: 18px;
+        }
+
+        .p2-card-metrics {
+          display: flex;
+          align-items: flex-start;
+          gap: 32px;
+          margin-bottom: 18px;
+
+          .p2-metric {
+            display: flex;
+            flex-direction: column;
+
+            .p2-metric-val {
+              font-size: 28px;
+              font-weight: 700;
+              color: #002EF5;
+              line-height: 1.1;
+            }
+
+            .p2-metric-lbl {
+              font-size: 11px;
+              font-weight: 500;
+              color: #7E8B9B;
+              margin-top: 4px;
+            }
+          }
+        }
+
+        .p2-card-desc {
+          font-size: 12px;
+          line-height: 1.45;
+          color: #7E8B9B;
+          margin-bottom: 24px;
+          min-height: 36px;
+        }
+
+        .p2-card-actions {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .p2-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #002EF5;
+            color: #FFFFFF;
+            border-radius: 20px 0 20px 0;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 11px 24px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+              background-color: #0026C8;
+            }
+          }
+
+          .p2-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFFFFF;
+            color: #002EF5;
+            border-radius: 20px 0 20px 0;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 11px 24px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+              background-color: #F8FAFC;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .page2-products-section {
+    .products-section-header {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .products-3cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

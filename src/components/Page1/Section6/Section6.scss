@@ -1,82 +1,200 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+.reviews-section {
+  padding: 30px 0 50px;
 
+  .reviews-outer-card {
+    background-color: var(--bg-alt);
+    border-radius: var(--radius-xl);
+    padding: 44px;
 
-html{
-    scroll-behavior: smooth;
-    font-size: 16px;
-    overflow-x: hidden;
-    background-color: #0A090D;
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: none;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.4;
-}
-button{
-    border-style: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: transparent;
-}
-li, a{
-    text-decoration: none;
-    list-style: none;
-    transition: all 0.3s ease;
-}
-input{
-    outline: none;
-    border-style: none;
-    background-color: transparent;
-}
-img{
-    display: block;
-    max-width: 100%;
-}
-body{
-    display: flex;
-    flex-direction: column;
-    gap: 150px;
-}
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
 
+      .section-title {
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: var(--text-main);
+        letter-spacing: -0.5px;
+      }
 
-.s6-section{
-    width: 100%;
+      .slider-arrows {
+        display: flex;
+        gap: 12px;
+
+        .arrow-btn {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: #FFFFFF;
+          border: 1px solid var(--border-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--text-main);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
+
+      .review-card {
+        background: #FFFFFF;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 24px rgba(27, 89, 248, 0.1);
+        }
+
+        .review-video-thumb {
+          position: relative;
+          height: 190px;
+          overflow: hidden;
+          cursor: pointer;
+          background-color: #F8FAFC;
+
+          .thumb-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+          }
+
+          &:hover .thumb-img {
+            transform: scale(1.02);
+          }
+        }
+
+        .review-meta {
+          padding: 20px;
+
+          .reviewer-name {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+          }
+
+          .reviewer-program {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .reviews-footer {
+      display: flex;
+      justify-content: center;
+
+      .btn-more-reviews {
+        padding: 12px 32px;
+        background: #FFFFFF;
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        border-radius: 24px 0px 24px 0px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: var(--primary-color);
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
+
+  .video-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
     justify-content: center;
-    &_inside{
-        margin-inline: 20px;
-        background-image: url(../../../assets/Page1/Section6/bg.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        max-width: 1200px;
-        width: 100%;
-        min-height: 519px;
+    z-index: 999;
+
+    .video-modal-content {
+      background: #FFFFFF;
+      width: 90%;
+      max-width: 640px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+
+      .modal-header {
         display: flex;
-        align-items: end;
-        justify-content: end;
-        &_block{
-            max-width: 676px;
-            width: 100%;
-            min-height: 220px;
-            background-color: #1F1F1F;
-            p{
-                padding: 40px 50px;
-                color: #E5E5E5;
-                font-weight: normal;
-                font-size: 1.25rem;
-                line-height: 1.4;
-                span{
-                    color: #DFD1A7;
-                    font-weight: bold;
-                    font-size: 1.25rem;
-                }
-            }
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--border-color);
+
+        h3 {
+          font-size: 1.0625rem;
+          font-weight: 700;
         }
+
+        .close-btn {
+          font-size: 1.25rem;
+          background: none;
+          border: none;
+          color: var(--text-muted);
+          cursor: pointer;
+
+          &:hover {
+            color: var(--text-main);
+          }
+        }
+      }
+
+      .modal-player-mock {
+        height: 340px;
+        background: #0F172A;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        gap: 16px;
+
+        .play-icon-large {
+          font-size: 2.5rem;
+          color: var(--primary-color);
+        }
+      }
     }
+  }
+}
+
+@media (max-width: 968px) {
+  .reviews-section {
+    .reviews-outer-card {
+      padding: 28px 20px;
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 }

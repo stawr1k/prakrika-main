@@ -1,0 +1,149 @@
+.yield-chart-section {
+  padding: 56px 0;
+
+  .yield-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    gap: 24px;
+
+    .yield-titles {
+      max-width: 640px;
+
+      .section-title {
+        font-size: 32px;
+        font-weight: 800;
+        color: #0F172A;
+        letter-spacing: -0.5px;
+        margin-bottom: 12px;
+      }
+
+      .section-subtitle {
+        font-size: 15px;
+        color: #64748B;
+        line-height: 1.5;
+      }
+    }
+
+    .yield-legend {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+
+          &.dot-total {
+            background-color: #0012D8;
+          }
+
+          &.dot-investor {
+            background-color: #5282F6;
+          }
+        }
+
+        .legend-label {
+          font-size: 14px;
+          font-weight: 600;
+          color: #0F172A;
+        }
+      }
+    }
+  }
+
+  .chart-wrapper {
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    border: 1px solid #EEF2F6;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+    padding: 32px 24px 20px 24px;
+    overflow-x: auto;
+
+    .yield-svg {
+      width: 100%;
+      height: auto;
+      min-width: 800px;
+      display: block;
+
+      .chart-node {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+
+        circle {
+          transition: r 0.2s ease;
+        }
+
+        &:hover circle {
+          r: 7;
+        }
+
+        .node-label {
+          font-size: 12px;
+          font-weight: 700;
+          font-family: inherit;
+
+          &.total-label {
+            fill: #0012D8;
+          }
+
+          &.investor-label {
+            fill: #5282F6;
+          }
+        }
+      }
+    }
+
+    .chart-x-axis {
+      display: flex;
+      justify-content: space-between;
+      min-width: 800px;
+      padding: 16px 20px 0 20px;
+      border-top: 1px solid #F1F5F9;
+      margin-top: 8px;
+
+      .axis-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: color 0.2s ease;
+
+        .axis-month {
+          font-size: 12px;
+          font-weight: 600;
+          color: #64748B;
+        }
+
+        .axis-year {
+          font-size: 11px;
+          color: #94A3B8;
+          margin-top: 2px;
+        }
+
+        &.is-active {
+          .axis-month {
+            color: #0012D8;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .yield-chart-section {
+    .yield-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+  }
+}

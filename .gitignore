@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Extra folders
+NEOCEX-main
+*.zip
+*.css.map
+download_figma.cjs

@@ -1,0 +1,220 @@
+.work-model-section {
+  padding: 50px 0 70px 0;
+
+  .model-main-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.5px;
+    margin-bottom: 36px;
+  }
+
+  .model-diagram-card {
+    background-color: #FFFFFF;
+    border-radius: 28px;
+    border: 1px solid #EEF2F6;
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04);
+    padding: 48px 48px 36px 48px;
+    position: relative;
+
+    .diagram-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+
+      .flow-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #002EF5;
+
+        .flow-chevrons {
+          font-size: 16px;
+          color: #93C5FD;
+          letter-spacing: -2px;
+        }
+      }
+    }
+
+    .diagram-center-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 40px;
+
+      .participant {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .participant-avatar {
+          width: 84px;
+          height: 84px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 3px solid #EFF6FF;
+          box-shadow: 0 6px 18px rgba(0, 46, 245, 0.1);
+          flex-shrink: 0;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .participant-info {
+          display: flex;
+          flex-direction: column;
+
+          .participant-role {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 6px;
+          }
+
+          .return-flow {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: #64748B;
+
+            .flow-chevrons {
+              font-size: 14px;
+              color: #93C5FD;
+              letter-spacing: -2px;
+            }
+          }
+        }
+
+        &--recipient {
+          justify-content: flex-end;
+          text-align: right;
+
+          .return-flow {
+            justify-content: flex-end;
+          }
+        }
+      }
+
+      .center-emblem {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+        .emblem-bars {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          height: 100px;
+
+          .bar {
+            width: 22px;
+            border-radius: 12px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &.bar-1 {
+              height: 70px;
+              background-color: #60A5FA;
+            }
+
+            &.bar-2 {
+              height: 100px;
+              background-color: #2563EB;
+
+              .arrow-up {
+                color: #FFFFFF;
+                font-size: 14px;
+                position: absolute;
+                top: 14px;
+              }
+            }
+
+            &.bar-3 {
+              height: 80px;
+              background-color: #1D4ED8;
+
+              .arrow-down {
+                color: #FFFFFF;
+                font-size: 14px;
+                position: absolute;
+                bottom: 14px;
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .diagram-bottom-bracket {
+      border-top: 1px dashed #E2E8F0;
+      padding-top: 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      .guarantee-text {
+        font-size: 13.5px;
+        color: #64748B;
+      }
+
+      .risk-text {
+        font-size: 14px;
+        font-weight: 600;
+        color: #002EF5;
+
+        span {
+          font-weight: 700;
+          color: #93C5FD;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .work-model-section {
+    .model-diagram-card {
+      padding: 32px 24px;
+
+      .diagram-top-row {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+
+      .diagram-center-row {
+        grid-template-columns: 1fr;
+        gap: 28px;
+
+        .participant--recipient {
+          flex-direction: row-reverse;
+          text-align: left;
+          justify-content: flex-start;
+
+          .return-flow {
+            justify-content: flex-start;
+          }
+        }
+
+        .center-emblem {
+          order: -1;
+        }
+      }
+    }
+  }
+}

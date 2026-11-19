@@ -1,29 +1,136 @@
-﻿import "./Section2.scss"
-import { useState } from "react"
+import React from "react"
+import { Link } from "react-router-dom"
+import { Photo } from "../../../Images.js"
+import "./Section2.scss"
 
-export default function Section2(){
+export default function Section2() {
+  const topProducts = [
+    {
+      id: "comfort",
+      category: "Инвестиции",
+      title: "Вклад Комфорт",
+      metric1Value: "17,5%",
+      metric1Label: "Доходность, до",
+      metric2Value: "90 дней",
+      metric2Label: "Срок вклада, от",
+      description: "Доход выплачивается по окончании срока договора, возможно досрочное расторжение",
+      btnPrimaryText: "Инвестировать",
+      btnPrimaryLink: "#calculator",
+      btnSecondaryText: "Подробнее",
+      btnSecondaryLink: "/deposit-comfort",
+      image: Photo.ProductSenior,
+      cardType: "wide",
+      imgModifier: "img-comfort"
+    },
+    {
+      id: "auto",
+      category: "Финансирование",
+      title: "Авто Рассрочка",
+      metric1Value: "5 млн",
+      metric1Label: "Сумма, до",
+      metric2Value: "3 лет",
+      metric2Label: "Срок, до",
+      description: "Отсутствие обязательности страхования КАСКО. Первоначальный взнос от 10%",
+      btnPrimaryText: "Оформить",
+      btnPrimaryLink: "#calculator",
+      btnSecondaryText: "Подробнее",
+      btnSecondaryLink: "/auto-installment",
+      image: Photo.ProductCar,
+      cardType: "narrow",
+      imgModifier: "img-car"
+    }
+  ]
 
-    const [isOpen, setIsOpen] = useState(0)
+  const bottomProducts = [
+    {
+      id: "express",
+      category: "Финансирование",
+      title: "Экспресс Рассрочка",
+      metric1Value: "1 млн",
+      metric1Label: "Сумма, до",
+      metric2Value: "3 лет",
+      metric2Label: "Срок, до",
+      description: "Финансирование физических лиц для приобретения необходимых товаров",
+      btnPrimaryText: "Оформить",
+      btnPrimaryLink: "#calculator",
+      btnSecondaryText: "Подробнее",
+      btnSecondaryLink: "/express-installment",
+      image: Photo.ProductWashingMachine,
+      cardType: "narrow",
+      imgModifier: "img-washer"
+    },
+    {
+      id: "active",
+      category: "Инвестиции",
+      title: "Вклад Активный",
+      metric1Value: "16,5%",
+      metric1Label: "Доходность, до",
+      metric2Value: "90 дней",
+      metric2Label: "Срок вклада, от",
+      description: "Доход выплачивается по окончании срока договора, возможно досрочное расторжение",
+      btnPrimaryText: "Инвестировать",
+      btnPrimaryLink: "#calculator",
+      btnSecondaryText: "Подробнее",
+      btnSecondaryLink: "/deposit-active",
+      image: Photo.ProductYoungSpecialist,
+      cardType: "wide",
+      imgModifier: "img-active"
+    }
+  ]
 
-    return(
-        <>
-            <section className="s2-section">
-                <div className="s2-inner">
-                    <h1>ИНЖЕНЕРНЫЕ ИЗЫСКАНИЯ - ЭТО НЕОТЪЕМЛЕМАЯ ЧАСТЬ ПРОЕКТНОЙ ДЕЯТЕЛЬНОСТИ, ОБЕСПЕЧИВАЮЩАЯ ВСЕСТОРОННЕЕ ИЗУЧЕНИЕ ПРИРОДНЫХ И ТЕХНОГЕННЫХ УСЛОВИЙ МЕСТНОСТИ ПЛАНИРУЕМОГО СТРОИТЕЛЬСТВА.</h1>
-                    <div className="s2-bottom">
-                        <p className="sub-label">Зачем нужны инженерные изыскания?</p>
-                        <div className="s2-text-block">
-                            <p className="body-text">Проведение инженерных работ позволяет получить объем необходимых данных для аргументирования технической возможности и экономической целесообразности проектирования и застройки на конкретной территории. Информировать о возможных рисках и изменениях геологической ситуации и окружающей среды, связанных со строительством и эксплуатацией объекта, разработать мероприятия по охране и защите природы и населения от влияния техногенных факторов.</p>
-                            <p className="body-text">Проведение инженерных исследований – первый этап грамотного проектирования и строительства. Без изыскательских работ невозможно получить разрешение на строительство, разработать безупречный проект, пройти экспертизу.</p>
-                            <div className={`s2-text-expandable ${isOpen ? "is-opened" : ""}`}>
-                                <p className="body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                                <p className="body-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-                            </div>
-                            <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? "СВЕРНУТЬ" : "ПОДРОБНЕЕ"}</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
-    )
+  const renderCard = (product) => (
+    <div key={product.id} className={`product-card product-card--${product.cardType}`}>
+      <div className="product-card__content">
+        <div className="product-card__top">
+          <span className="product-category">
+            {product.category}
+          </span>
+          <h3 className="product-title">{product.title}</h3>
+
+          <div className="product-metrics">
+            <div className="metric-box">
+              <span className="metric-val">{product.metric1Value}</span>
+              <span className="metric-lbl">{product.metric1Label}</span>
+            </div>
+            <div className="metric-box">
+              <span className="metric-val">{product.metric2Value}</span>
+              <span className="metric-lbl">{product.metric2Label}</span>
+            </div>
+          </div>
+
+          <p className="product-desc">{product.description}</p>
+        </div>
+
+        <div className="product-actions">
+          <a href={product.btnPrimaryLink} className="card-btn-primary">
+            {product.btnPrimaryText}
+          </a>
+          <Link to={product.btnSecondaryLink} className="card-btn-secondary">
+            {product.btnSecondaryText}
+          </Link>
+        </div>
+      </div>
+
+      <div className={`product-card__image-wrap ${product.imgModifier}`}>
+        <img src={product.image} alt={product.title} className="product-img" />
+      </div>
+    </div>
+  )
+
+  return (
+    <section className="recommended-products-section">
+      <div className="container">
+        <h2 className="section-main-title">Рекомендуемые продукты</h2>
+
+        <div className="products-grid">
+          <div className="products-row products-row--top">
+            {topProducts.map(renderCard)}
+          </div>
+          <div className="products-row products-row--bottom">
+            {bottomProducts.map(renderCard)}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }

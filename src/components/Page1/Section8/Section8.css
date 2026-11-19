@@ -1,0 +1,176 @@
+.consultation-section {
+  padding: 40px 0 80px;
+}
+.consultation-section .consultation-banner {
+  background: linear-gradient(135deg, #003BE5 0%, #1E40AF 100%);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  color: #FFFFFF;
+  box-shadow: 0 20px 40px -10px rgba(0, 59, 229, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+.consultation-section .consultation-banner::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.consultation-section .consultation-banner .banner-content {
+  position: relative;
+  z-index: 2;
+}
+.consultation-section .consultation-banner .banner-content .banner-tag {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #93C5FD;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.consultation-section .consultation-banner .banner-content .banner-title {
+  font-size: 2.375rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+.consultation-section .consultation-banner .banner-content .banner-desc {
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: #E0E7FF;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+.consultation-section .consultation-banner .banner-content .banner-guarantees {
+  display: flex;
+  gap: 24px;
+}
+.consultation-section .consultation-banner .banner-content .banner-guarantees .g-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+.consultation-section .consultation-banner .banner-content .banner-guarantees .g-item .g-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #22C55E;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 800;
+}
+.consultation-section .consultation-banner .banner-form-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  color: var(--text-main);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+.consultation-section .consultation-banner .banner-form-card .consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.consultation-section .consultation-banner .banner-form-card .consultation-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.consultation-section .consultation-banner .banner-form-card .consultation-form .form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.consultation-section .consultation-banner .banner-form-card .consultation-form .form-group input, .consultation-section .consultation-banner .banner-form-card .consultation-form .form-group select {
+  padding: 12px 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  background: #FFFFFF;
+}
+.consultation-section .consultation-banner .banner-form-card .consultation-form .form-group input:focus, .consultation-section .consultation-banner .banner-form-card .consultation-form .form-group select:focus {
+  border-color: var(--primary-color);
+}
+.consultation-section .consultation-banner .banner-form-card .consultation-form .checkbox-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.consultation-section .consultation-banner .banner-form-card .consultation-form .checkbox-consent input {
+  margin-top: 2px;
+}
+.consultation-section .consultation-banner .banner-form-card .consultation-form .btn-submit-form {
+  margin-top: 8px;
+  padding: 14px;
+  font-size: 1rem;
+}
+.consultation-section .consultation-banner .banner-form-card .form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 0;
+}
+.consultation-section .consultation-banner .banner-form-card .form-success .success-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #DCFCE7;
+  color: #16A34A;
+  font-size: 2rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.consultation-section .consultation-banner .banner-form-card .form-success h3 {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+.consultation-section .consultation-banner .banner-form-card .form-success p {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 968px) {
+  .consultation-section .consultation-banner {
+    grid-template-columns: 1fr;
+    padding: 36px 24px;
+  }
+  .consultation-section .consultation-banner .banner-title {
+    font-size: 1.875rem;
+  }
+}/*# sourceMappingURL=Section8.css.map */

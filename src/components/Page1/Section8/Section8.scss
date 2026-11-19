@@ -1,123 +1,201 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+.consultation-section {
+  padding: 40px 0 80px;
 
+  .consultation-banner {
+    background: linear-gradient(135deg, #003BE5 0%, #1E40AF 100%);
+    border-radius: var(--radius-xl);
+    padding: 56px 48px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+    color: #FFFFFF;
+    box-shadow: 0 20px 40px -10px rgba(0, 59, 229, 0.4);
+    position: relative;
+    overflow: hidden;
 
-html{
-    scroll-behavior: smooth;
-    font-size: 16px;
-    overflow-x: hidden;
-    background-color: #0A090D;
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-button{
-    border-style: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: transparent;
-}
-li, a{
-    text-decoration: none;
-    list-style: none;
-    transition: all 0.3s ease;
-}
-input{
-    outline: none;
-    border-style: none;
-    background-color: transparent;
-}
-img{
-    display: block;
-    max-width: 100%;
-}
-body{
-    display: flex;
-    flex-direction: column;
-    gap: 150px;
-}
+    &::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
+    .banner-content {
+      position: relative;
+      z-index: 2;
 
+      .banner-tag {
+        display: inline-block;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #93C5FD;
+        background: rgba(255, 255, 255, 0.12);
+        padding: 4px 12px;
+        border-radius: 20px;
+        letter-spacing: 0.5px;
+        margin-bottom: 16px;
+      }
 
-.s8-section{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    &_inside{
-        max-width: 1200px;
-        width: 100%;
-        height: auto;
-        margin-inline: 20px;
+      .banner-title {
+        font-size: 2.375rem;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+        margin-bottom: 20px;
+      }
+
+      .banner-desc {
+        font-size: 1.0625rem;
+        line-height: 1.55;
+        color: #E0E7FF;
+        margin-bottom: 32px;
+        max-width: 500px;
+      }
+
+      .banner-guarantees {
+        display: flex;
+        gap: 24px;
+
+        .g-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 0.9375rem;
+          font-weight: 600;
+
+          .g-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #22C55E;
+            color: #FFFFFF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8125rem;
+            font-weight: 800;
+          }
+        }
+      }
+    }
+
+    .banner-form-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      color: var(--text-main);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      position: relative;
+      z-index: 2;
+
+      .consultation-form {
         display: flex;
         flex-direction: column;
-        gap: 90px;
-        h1{
-            max-width: 510px;
-            line-height: 1.2;
-            font-family: "Manrope", sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 2.25rem;
-            color: #F2F2F2;
-        }
-        &_bottom{
-            display: flex;
-            gap: 30px;
-            justify-content: space-between;
-            .sub-label{
-                max-width: 330px;
-                width: 100%;
-                line-height: 1.4;
-                font-size: 1.125rem;
-                color: #DFD1A7;
+        gap: 18px;
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+
+          label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--text-main);
+          }
+
+          input, select {
+            padding: 12px 16px;
+            border: 1.5px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 0.9375rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+            background: #FFFFFF;
+
+            &:focus {
+              border-color: var(--primary-color);
             }
-            &_questions{
-                max-width: 780px;
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                button{
-                    user-select: none;
-                    border-bottom: 1px solid #3B3A3D;
-                    padding-block: 20px;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                    img{
-                        transition: all ease 0.3s;
-                        &.is-rotated{
-                            transform: rotate(90deg);
-                        }
-                    }
-                    div{
-                        align-items: center;
-                        justify-content: start;
-                        display: flex;
-                        gap: 20px;
-                        h2{
-                            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                            font-size: 1.5rem;                            
-                            color: #E5E5E5;
-                            line-height: 1.4;
-                        }
-                    }
-                    p{
-                        user-select: text;
-                        margin-left: 35px;
-                        padding: 20px;
-                        border-left: 1px solid #DFD1A7;
-                        line-height: 1.4;
-                        font-size: 1.125rem;
-                        font-weight: lighter;
-                        text-align: start;
-                        color: #E5E5E5;
-                    }
-                }
-            }
+          }
         }
+
+        .checkbox-consent {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          line-height: 1.4;
+          cursor: pointer;
+          margin-top: 4px;
+
+          input {
+            margin-top: 2px;
+          }
+        }
+
+        .btn-submit-form {
+          margin-top: 8px;
+          padding: 14px;
+          font-size: 1rem;
+        }
+      }
+
+      .form-success {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px 0;
+
+        .success-icon {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background: #DCFCE7;
+          color: #16A34A;
+          font-size: 2rem;
+          font-weight: 800;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 16px;
+        }
+
+        h3 {
+          font-size: 1.375rem;
+          font-weight: 800;
+          color: var(--text-main);
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 0.9375rem;
+          color: var(--text-muted);
+          line-height: 1.5;
+          margin-bottom: 24px;
+        }
+      }
     }
+  }
+}
+
+@media (max-width: 968px) {
+  .consultation-section {
+    .consultation-banner {
+      grid-template-columns: 1fr;
+      padding: 36px 24px;
+
+      .banner-title {
+        font-size: 1.875rem;
+      }
+    }
+  }
 }

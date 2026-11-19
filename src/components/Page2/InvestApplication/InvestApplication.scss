@@ -1,0 +1,230 @@
+.invest-application-section {
+  padding: 40px 0 80px 0;
+
+  .application-card {
+    background-color: #F0F4F8;
+    border-radius: 36px;
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    position: relative;
+    overflow: hidden;
+    padding: 56px 48px 56px 64px;
+
+    .application-main {
+      z-index: 2;
+
+      .app-title {
+        font-size: 32px;
+        font-weight: 800;
+        color: #0F172A;
+        letter-spacing: -0.5px;
+        margin-bottom: 32px;
+      }
+
+      .app-form {
+        display: flex;
+        flex-direction: column;
+
+        .app-columns-grid {
+          display: grid;
+          grid-template-columns: 1.15fr 1fr;
+          gap: 40px;
+          margin-bottom: 36px;
+
+          .app-col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .col-heading {
+              font-size: 14px;
+              font-weight: 700;
+              color: #002EF5;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              margin-bottom: 6px;
+            }
+
+            .app-field {
+              display: flex;
+              flex-direction: column;
+
+              label {
+                font-size: 12px;
+                font-weight: 500;
+                color: #64748B;
+                margin-bottom: 4px;
+              }
+
+              input, select {
+                height: 44px;
+                background-color: #FFFFFF;
+                border: 1px solid #E2E8F0;
+                border-radius: 10px;
+                padding: 0 14px;
+                font-size: 14px;
+                color: #0F172A;
+                font-weight: 500;
+                outline: none;
+                transition: border-color 0.2s ease;
+
+                &:focus {
+                  border-color: #002EF5;
+                }
+              }
+            }
+
+            .app-slider-box {
+              background-color: #FFFFFF;
+              border: 1px solid #E2E8F0;
+              border-radius: 12px;
+              padding: 16px 18px;
+
+              .slider-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                margin-bottom: 12px;
+
+                .slider-lbl {
+                  font-size: 12px;
+                  color: #64748B;
+                }
+
+                .slider-val {
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: #0F172A;
+                }
+              }
+
+              .custom-range {
+                width: 100%;
+                accent-color: #002EF5;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .app-bottom-row {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+
+          .btn-app-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #002EF5;
+            color: #FFFFFF;
+            border-radius: 20px 0 20px 0;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 14px 36px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 46, 245, 0.25);
+            transition: background-color 0.2s ease;
+
+            &:hover {
+              background-color: #0026C8;
+            }
+          }
+
+          .app-disclaimer {
+            font-size: 12px;
+            color: #64748B;
+
+            a {
+              color: #002EF5;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      .app-success-box {
+        background-color: #FFFFFF;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        max-width: 500px;
+
+        .check-icon {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-color: #10B981;
+          color: #FFF;
+          font-size: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 16px auto;
+        }
+
+        h3 {
+          font-size: 22px;
+          font-weight: 800;
+          color: #0F172A;
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 14px;
+          color: #64748B;
+        }
+      }
+    }
+
+    .application-visual {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      .app-man-img {
+        max-height: 480px;
+        width: auto;
+        object-fit: contain;
+        position: absolute;
+        bottom: -56px;
+        right: 0;
+        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.08));
+      }
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .invest-application-section {
+    .application-card {
+      grid-template-columns: 1fr;
+      padding: 40px 24px 280px 24px;
+
+      .application-main {
+        .app-form {
+          .app-columns-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+          }
+
+          .app-bottom-row {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+        }
+      }
+
+      .application-visual {
+        .app-man-img {
+          right: 50%;
+          transform: translateX(50%);
+          max-height: 280px;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}

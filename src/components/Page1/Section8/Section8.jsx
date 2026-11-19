@@ -1,49 +1,110 @@
-﻿import "./Section8.scss"
-import { Photo } from "../../../Images.js"
-import { useState } from "react"
+import React, { useState } from "react"
+import "./Section8.scss"
 
-const questions = [
-    {title: "Сколько вы работаете в этой области?", descr: "Мы работаем уже 30 лет и накопили уникальный опыт. Любые трудности для нас это пустяк"},
-    {title: "Вы работаете по всей России?", descr: "Да"},
-    {title: "Какие услуги в плане инженерных изысканий Вы оказываете?", descr: "Многие"},
-    {title: "Есть ли у Вас прайс-лист?", descr: "Есть"},
-    {title: "Как оценивается время работ?", descr: "«Очень быстро»"},
-    {title: "Есть ли у Вас вакансии?", descr: "Нет"},
-    {title: "Где расположен Ваш офис?", descr: "Не знаю"},
-]
+export default function Section8() {
+  const [submitted, setSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    program: "Вклад «Комфорт»",
+    agree: true
+  })
 
-export default function Section8(){
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!formData.name || !formData.phone) return
+    setSubmitted(true)
+  }
 
-    const [isOpen, setIsOpen] = useState(0)
-    const toggleQuestion = (que) => {
-        setIsOpen((prev) => (prev === que ? null : que))
-    }
+  return (
+    <section id="consultation" className="consultation-section">
+      <div className="container">
+        <div className="consultation-banner">
+          <div className="banner-content">
+            <span className="banner-tag">Персональный расчет</span>
+            <h2 className="banner-title">Получите бесплатную консультацию специалиста</h2>
+            <p className="banner-desc">
+              Наш эксперт свяжется с вами в течение 15 минут, ответит на все вопросы по программам и рассчитает индивидуальный график выплат.
+            </p>
 
-    return(
-        <>
-            <section className="s8-section">
-                <div className="s8-inner">
-                    <h1>ВЫСОКИЙ УРОВЕНЬ И ПРОФЕССИОНАЛЬНАЯ КОМАНДА</h1>
-                    <div className="s8-bottom">
-                        <p className="sub-label">Подтверждение наших компетенций в специализации</p>
-                        <div className="s8-accordion-list">
-                            {questions.map((meow, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => toggleQuestion(index)}
-                                >
-                                    <div>
-                                        <img src={isOpen === index ? Photo.Minus : Photo.Plus} alt="" className={isOpen === index ? "is-rotated" : ""}/>
-                                        <h2>{meow.title}</h2>
-                                    </div>
-                                    {/* <p className={isOpen === index ? "is-opened" : ""}>{meow.descr}</p> */}
-                                    {isOpen === index && <p>{meow.descr}</p>}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
+            <div className="banner-guarantees">
+              <div className="g-item">
+                <span className="g-icon">✓</span>
+                <span>Без спама и навязывания</span>
+              </div>
+              <div className="g-item">
+                <span className="g-icon">✓</span>
+                <span>Расчет в день обращения</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="banner-form-card">
+            {submitted ? (
+              <div className="form-success">
+                <div className="success-icon">✓</div>
+                <h3>Заявка успешно принята!</h3>
+                <p>Мы свяжемся с вами по номеру <strong>{formData.phone}</strong> в ближайшее время.</p>
+                <button className="btn btn-primary" onClick={() => setSubmitted(false)}>
+                  Отправить новую заявку
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="consultation-form">
+                <div className="form-group">
+                  <label>Ваше имя</label>
+                  <input
+                    type="text"
+                    placeholder="Например, Марат"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  />
                 </div>
-            </section>
-        </>
-    )
+
+                <div className="form-group">
+                  <label>Номер телефона</label>
+                  <input
+                    type="tel"
+                    placeholder="+7 (___) ___-__-__"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label>Интересующая программа</label>
+                  <select
+                    value={formData.program}
+                    onChange={(e) => setFormData({ ...formData, program: e.target.value })}
+                  >
+                    <option value="Вклад «Комфорт»">Вклад «Комфорт» (до 17,5%)</option>
+                    <option value="Вклад «Активный»">Вклад «Активный» (до 16,5%)</option>
+                    <option value="Авто Рассрочка">Авто Рассрочка (до 5 млн ₽)</option>
+                    <option value="Экспресс Рассрочка">Экспресс Рассрочка (до 1 млн ₽)</option>
+                    <option value="Финансирование бизнеса">Финансирование бизнеса</option>
+                  </select>
+                </div>
+
+                <label className="checkbox-consent">
+                  <input
+                    type="checkbox"
+                    checked={formData.agree}
+                    onChange={(e) => setFormData({ ...formData, agree: e.target.checked })}
+                    required
+                  />
+                  <span>Я согласен на обработку персональных данных и ознакомлен с политикой конфиденциальности</span>
+                </label>
+
+                <button type="submit" className="btn btn-primary btn-submit-form">
+                  Получить консультацию
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }

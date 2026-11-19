@@ -1,0 +1,9 @@
+.page2 {
+  // Page2 inherits all global styles from main.scss / index.css
+  // Additional page-level overrides if needed
+
+  // Ensure the calc section id is unique between pages
+  #calculator {
+    scroll-margin-top: 100px;
+  }
+}

@@ -1,0 +1,248 @@
+.invest-products-section {
+  padding: 80px 0 60px;
+  background: #fff;
+}
+.invest-products-section .invest-products-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 24px;
+}
+.invest-products-section .invest-products-header .section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--primary-color);
+  background: rgba(27, 89, 248, 0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.invest-products-section .invest-products-header .section-main-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 8px;
+}
+.invest-products-section .invest-products-header .section-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+.invest-products-section .invest-products-header .invest-products-nav {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.invest-products-section .invest-products-header .invest-products-nav .inv-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.invest-products-section .invest-products-header .invest-products-nav .inv-nav-btn:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+.invest-products-section .invest-products-header .invest-products-nav .inv-nav-btn.swiper-button-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.invest-products-section .invest-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 0;
+  color: var(--text-muted);
+}
+.invest-products-section .invest-loading .loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #E2E8F0;
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.invest-products-section .invest-error {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  background: #FFF5F5;
+  border: 1px solid #FED7D7;
+  border-radius: 12px;
+  color: #C53030;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+.invest-products-section .invest-error code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+.invest-products-section .inv-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 30px;
+}
+.invest-products-section .inv-pagination :global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #CBD5E1;
+  opacity: 1;
+  transition: all 0.3s;
+}
+.invest-products-section .inv-pagination :global(.swiper-pagination-bullet-active) {
+  width: 24px;
+  background: var(--primary-color);
+}
+
+.invest-product-card {
+  position: relative;
+  background: #fff;
+  border: 1.5px solid var(--border-color);
+  border-radius: 20px;
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.25s, transform 0.25s;
+  height: 100%;
+}
+.invest-product-card:hover {
+  box-shadow: 0 12px 32px rgba(27, 89, 248, 0.12);
+  transform: translateY(-4px);
+}
+.invest-product-card .invest-card-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 3px 10px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 20px;
+}
+.invest-product-card .invest-card-category {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.invest-product-card .invest-card-category .cat-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+.invest-product-card .invest-card-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.25;
+}
+.invest-product-card .invest-card-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.invest-product-card .invest-metric {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #F8FAFF;
+  border-radius: 10px;
+}
+.invest-product-card .invest-metric__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(27, 89, 248, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+.invest-product-card .invest-metric div {
+  display: flex;
+  flex-direction: column;
+}
+.invest-product-card .invest-metric__value {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+.invest-product-card .invest-metric__label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.invest-product-card .invest-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+.invest-product-card .invest-card-payout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  padding: 6px 0;
+  border-top: 1px solid var(--border-color);
+}
+.invest-product-card .invest-card-payout .payout-label {
+  color: var(--text-muted);
+}
+.invest-product-card .invest-card-payout .payout-value {
+  font-weight: 600;
+  color: var(--text-main);
+}
+.invest-product-card .invest-card-actions {
+  display: flex;
+  gap: 10px;
+}
+.invest-product-card .invest-card-actions .invest-card-btn-primary {
+  flex: 1;
+  text-align: center;
+  padding: 11px 10px;
+  font-size: 0.9rem;
+}
+.invest-product-card .invest-card-actions .invest-card-btn-secondary {
+  flex: 1;
+  text-align: center;
+  padding: 10px 10px;
+  font-size: 0.9rem;
+}/*# sourceMappingURL=InvestProducts.css.map */

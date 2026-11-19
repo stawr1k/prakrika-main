@@ -1,43 +1,37 @@
-﻿import "./Section3.scss"
-import { Photo } from "../../../Images.js"
-import { useState } from "react"
+import React from "react"
+import "./Section3.scss"
 
-const variants = [
-    {image: Photo.Stone, title: "Геологические", descr: "Получение востребованных материалов исследований для обоснования возможностей проектирования и стройки в существующей геологической ситуации"},
-    {image: Photo.Camera, title: "Геодезические", descr: "Комплексные мероприятия по изучению и анализу ситуационных данных о рельефе земельного участка, его гидросети, растительности, текущем использовании, наличии и расположении зданий и сооружений, линейных объектов, наземных и подземных коммуникаций"},
-    {image: Photo.Tree, title: "Экологические", descr: "Мероприятия по изучению и мониторингу текущего состояния окружающей среды, прогнозирование вероятных негативных изменений экосистемы от социально-экономических факторов и техногенной нагрузки"},
-]
+export default function Section3() {
+  return (
+    <section className="trust-badges-section">
+      <div className="container">
+        <div className="trust-badges-grid">
+          <div className="trust-badge-card">
+            <div className="badge-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="13 17 18 12 13 7"></polyline>
+                <polyline points="6 17 11 12 6 7"></polyline>
+              </svg>
+            </div>
+            <span className="badge-text">
+              Опыт команды в сфере партнерских финансов более 10 лет.
+            </span>
+          </div>
 
-export default function Section3(){
-
-    const [isOpen, setIsOpen] = useState(0)
-    const toggleArticle = (art) => {
-        setIsOpen((prev) => (prev === art ? null : art))
-    }
-
-    return(
-        <>
-            <section className="s3-section">
-                <div className="s3-inner">
-                    <h1>ОСНОВНЫЕ ВИДЫ ИНЖЕНЕРНЫХ ИЗЫСКАНИЙ</h1>
-                    <div className="s3-bottom">
-                        <p className="sub-label">Главные направления деятельности</p>
-                        <div className="s3-variants-list">
-                            {variants.map((meow) => (
-                                <article key={meow.title}>
-                                    <img src={meow.image} alt="" />
-                                    <div className="card-text-wrap">
-                                        <h3>{meow.title}</h3>
-                                        <p>{meow.descr}</p>
-                                        <p className={`card-text-hidden ${isOpen === meow ? "is-opened" : ""}`}>Phasellus hendrerit ante in aliquam euismod. Nullam pretium sollicitudin mauris eu placerat. Maecenas commodo dui nec viverra tempor. Integer gravida. </p>
-                                        <button onClick={() => toggleArticle(meow)}>{isOpen === meow ? "СВЕРНУТЬ" : "ПОДРОБНЕЕ"}</button>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
-    )
+          <div className="trust-badge-card">
+            <div className="badge-icon-wrap">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+            </div>
+            <span className="badge-text">
+              Соответствие деятельности компании высоким этическим и правовым стандартам
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }

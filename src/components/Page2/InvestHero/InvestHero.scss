@@ -1,0 +1,203 @@
+.invest-hero-section {
+  padding: 16px 0 32px 0;
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #94A3B8;
+    margin-bottom: 20px;
+
+    .breadcrumb-link {
+      color: #94A3B8;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #002EF5;
+      }
+    }
+
+    .breadcrumb-sep {
+      color: #CBD5E1;
+    }
+
+    .breadcrumb-current {
+      color: #64748B;
+      font-weight: 500;
+    }
+  }
+
+  .invest-hero-card {
+    background-color: #F0F4F8;
+    border-radius: 32px;
+    min-height: 440px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px 60px 64px;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 2;
+      max-width: 580px;
+
+      .hero-h1 {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 1.18;
+        color: #0F172A;
+        letter-spacing: -0.5px;
+        margin-bottom: 18px;
+
+        .highlight-blue {
+          color: #002EF5;
+        }
+      }
+
+      .hero-sub {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #64748B;
+        margin-bottom: 36px;
+        max-width: 460px;
+      }
+
+      .hero-actions-row {
+        display: flex;
+        align-items: center;
+        gap: 36px;
+
+        .btn-hero-invest {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #002EF5;
+          color: #FFFFFF;
+          font-size: 15px;
+          font-weight: 600;
+          padding: 14px 32px;
+          border-radius: 20px 0 20px 0;
+          text-decoration: none;
+          box-shadow: 0 4px 14px rgba(0, 46, 245, 0.25);
+          transition: background-color 0.2s ease, transform 0.2s ease;
+
+          &:hover {
+            background-color: #0026C8;
+            transform: translateY(-1px);
+          }
+        }
+
+        .hero-dots {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          .dot-pill {
+            width: 24px;
+            height: 7px;
+            border-radius: 4px;
+            background-color: #002EF5;
+            cursor: pointer;
+            transition: all 0.2s ease;
+          }
+
+          .dot-circle {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #CBD5E1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &.active {
+              background-color: #002EF5;
+              width: 24px;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    &__visual {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 1;
+
+      .hero-man-img {
+        max-height: 480px;
+        width: auto;
+        object-fit: contain;
+        position: absolute;
+        bottom: -20px;
+        right: 40px;
+        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.08));
+      }
+
+      .hero-arrows {
+        position: absolute;
+        right: 16px;
+        bottom: 24px;
+        display: flex;
+        gap: 8px;
+        z-index: 3;
+
+        .arrow-btn {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: #FFFFFF;
+          border: 1px solid rgba(226, 232, 240, 0.8);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #475569;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            background-color: #F8FAFC;
+            color: #002EF5;
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .invest-hero-section {
+    .invest-hero-card {
+      grid-template-columns: 1fr;
+      padding: 36px 24px 280px 24px;
+
+      &__content {
+        .hero-h1 {
+          font-size: 28px;
+        }
+      }
+
+      &__visual {
+        .hero-man-img {
+          right: 50%;
+          transform: translateX(50%);
+          max-height: 280px;
+          bottom: 0;
+        }
+
+        .hero-arrows {
+          right: 20px;
+          bottom: 16px;
+        }
+      }
+    }
+  }
+}
